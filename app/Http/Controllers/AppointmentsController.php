@@ -39,8 +39,24 @@ class AppointmentsController extends Controller
         $appointment->date=$date;
         $appointment->slot=$slot;
 
+        $date_formatted = strtotime($date);
+
+        $day = date('D', $date_formatted);
+
+        error_log($day);
+
         $appointments = Appointment::all();
         $count = 0;
+
+                for($i = 0; $i < count($appointments); $i++)
+        {
+
+                if($day === 'Sat' || $day === "Sun")
+                {
+                    return redirect('/appointments/create')->with('message', "We are closed on weekends!");
+                }
+        }
+
         for($i = 0; $i < count($appointments); $i++)
         {
 
