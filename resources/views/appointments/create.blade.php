@@ -12,7 +12,11 @@
 
             <section class="section2">
 
-                <p class='message'>{{ session('message') }}</p>
+                @if(session('message'))
+                <div class="message-box">
+                    <p class='message'>{{ session('message') }}</p>
+                </div>
+                @endif
                 <form action="/appointments" method="POST">
                     @csrf
                         <div class='form-wrapper'>
@@ -77,7 +81,7 @@
                         </fieldset>
                         </div>
                         </div>
-                    <input class="btn" type="submit" />
+                    <input class="btn" type="submit" value="Check if the date and hour slot are available!"/>
                 </form>
             </section>
             </main>

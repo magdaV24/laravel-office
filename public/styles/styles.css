@@ -5,10 +5,11 @@
     --border: #33235e;
     --font-color: #0a1870;
     --font-color2:  #2e43cc;
-    --error: rgb(206,32,41);
     --success:  rgb(133,187,101);
     --message:  rgb(0,73,83);
     --input-focused: rgb(186,162,252, .6);
+    --error-box: #cc4e5c;
+    --error-text:#331f0b;
 }
 
 body{
@@ -57,20 +58,35 @@ section{
     overflow: hidden;
 }
 
+.message-box{
+    width: 75%;
+    height: 85px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--error-box);
+    box-shadow: rgba(240, 46, 62, 0.4) 5px 5px,
+                rgba(240, 46, 46, 0.3) 10px 10px,
+                rgba(240, 46, 62, 0.2) 15px 15px,
+                rgba(240, 46, 78, 0.1) 20px 20px,
+                rgba(240, 46, 104, 0.05) 25px 25px;
+}
+
 .message{
     font-size: 1.1rem;
-    color: darkred;
+    color: var(--error-text);
 }
 
 img{
     width: 100%;
     height: 100%;
 }
+
 .credit{
     position: absolute;
     width: 66.7%;
     height: 40px;
-    margin-top: -300px;
+    margin-top: 500px;
     background-color: rgb(0, 0, 0, .4);
     display: flex;
     justify-content: center;
@@ -183,7 +199,6 @@ input:focus + span{
     font-size: 1rem;
 }
 
-
 input:focus{
     background-color: var(--input-focused);
     border-bottom: 1px solid var(--border);
@@ -205,36 +220,6 @@ input:focus{
 
 .btn:hover{
     size: 1.1;
-}
-
-small{
-    width: 300px;
-    height: 20px;
-    color: darkred;
-}
-
-.error{
-    background-color: var(--error);
-    border-radius: 3px;
-    width: 260px;
-}
-
-.success{
-    background-color: var(--success);
-    border-radius: 3px;
-    width: 260px;
-}
-
-.message.completed{
-    width: 100%;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5rem;
-    margin-right: 75px;
-    color: var(--message);
-    opacity: 1;
 }
 
 /*Dashboard*/
@@ -262,10 +247,12 @@ small{
     align-items: center;
     justify-content: center;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+    background-color: #d1d2db;
 }
 
 .link:hover{
     scale: 1.1;
+    background-color: #bfc1cc;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
@@ -274,4 +261,8 @@ small{
 table{
     width: 100%;
     height: fit-content;
+}
+
+th, td{
+    border-bottom: 1px solid black;
 }
