@@ -81,7 +81,7 @@
                         </fieldset>
                         </div>
                         </div>
-                    <input class="btn" type="submit" value="Check if the date and hour slot are available!"/>
+                    <input class="btn" type="submit" value="Check availability"/>
                 </form>
             </section>
             </main>
