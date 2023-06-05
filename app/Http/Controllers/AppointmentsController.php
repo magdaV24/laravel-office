@@ -48,13 +48,18 @@ class AppointmentsController extends Controller
         $appointments = Appointment::all();
         $count = 0;
 
-                for($i = 0; $i < count($appointments); $i++)
+        for($i = 0; $i < count($appointments); $i++)
         {
 
-                if($day === 'Sat' || $day === "Sun")
-                {
-                    return redirect('/appointments/create')->with('message', "We are closed on weekends!");
-                }
+            if($date_formatted < time())
+            {
+                return redirect('/appointments/create')->with('message', "This day has already passed!");
+            }
+
+            if($day === "Sat" || $day === "Sun")
+            {
+                return redirect('/appointments/create')->with('message', "We are closed on weekends!");
+            }
         }
 
         for($i = 0; $i < count($appointments); $i++)
@@ -72,7 +77,7 @@ class AppointmentsController extends Controller
         }
 
         for($i = 0; $i < count($appointments); $i++){
-            if($appointments[$i]['first_name'] === $first_name && $appointments[$i]['last_name'] === $last_name)
+            if($appointments[$i]['first_name'] === $first_name && $appointments[$i]['last_name'] === $last_name && $appointments[$i]['email_address'] === $email && $appointments[$i]['address'] === $address && $appointments[$i]['phone_number'] === $phone_number)
             {
                 return redirect('/appointments/create')->with('message', "You already made an appointment!");
             }
