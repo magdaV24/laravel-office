@@ -1,4 +1,4 @@
-### Office page made with Laravel
+### Booking app created with Laravel
 
 ![Screenshot_4](https://github.com/magdaV24/laravel-office/assets/114444914/e74e8ee6-6965-428e-90fd-63157926895f)
 
@@ -11,7 +11,7 @@ The second choice redirects to the appointment form.
 If the person hadn't already made an appointment, the day has free time slots or the day is not in the past/a weekend day, the data is going to be sent to the database and the person is going to be redirected to a goodbye view. 
 ![Screenshot_5](https://github.com/magdaV24/laravel-office/assets/114444914/2db533e0-230e-480b-8492-7187c1fe8521)
 
-If the appointment can't be scheduled, an message will be sent to the person exxpaining why the appointment can be made.
+If the appointment can't be scheduled, a message will be sent to the person, explaining why the chosen date isn't suitable.
 
 ![Screenshot_1](https://github.com/magdaV24/laravel-office/assets/114444914/b7b96f59-c280-4a94-bc4d-d5bc012cb23f)
 ![1](https://github.com/magdaV24/laravel-office/assets/114444914/40f29f38-9df0-4cef-ad9b-56aba7255cc7)
